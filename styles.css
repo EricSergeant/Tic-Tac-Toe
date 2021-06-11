@@ -30,11 +30,21 @@ aside {
   width: 25%;
 }
 
+.player-1-side {
+  background: linear-gradient(#FFFFFF, #FFFFFF, #0D47A1, #000000);
+}
+
+.player-2-side {
+  background: linear-gradient(#FFFFFF, #FFFFFF, #C70039, #000000);
+}
+
 .game-area {
   display: flex;
   flex-direction: column;
   align-items: center;
   flex-grow: 1;
+  /* background: linear-gradient(#FFFFFF, #0D47A1, #DAF7A6, #FFC300, #FF5733, #C70039, #000000); */
+  background: linear-gradient(#FFFFFF, #FFFFFF, #DAF7A6);
 }
 
 .player-turn-display-container {
@@ -50,11 +60,12 @@ aside {
   flex-wrap: wrap;
   margin-top: 10%;
   width: 100%;
-  height: 40%;
+  height: 50%;
 }
 
 .game-board > button {
   width: 30%;
   height: 30%;
-  background-color: blue;
+  background-color: grey;
+  border: 2px solid black;
 }
