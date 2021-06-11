@@ -69,7 +69,7 @@ aside {
 .game-board > button {
   width: 30%;
   height: 30%;
-  background-color: grey;
+  background-color: white;
   border: 2px solid black;
 }
 
