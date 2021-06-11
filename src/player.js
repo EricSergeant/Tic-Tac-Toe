@@ -4,19 +4,19 @@
 // saveWinsToStorage
 // retrieveWinsFromStorage
 
-class Player () {
+class Player {
   constructor(id, tokenPiece, wins) {
     this.id = id;
     this.token = tokenPiece;
-    this.wins = [];
+    this.wins = wins || 0;
   }
   saveWinsToStorage() {
-
+    var storage = window.localStorage;
+    storage.clear();
+    localStorage.setItem(`player${this.id}Data`, JSON.stringify(this.wins));
   }
   retrieveWinsFromStorage() {
-
+    this.wins = JSON.parse(localStorage.getItem(`player${this.id}Data`));
   }
 
 }
-
-module.exports = Player;
