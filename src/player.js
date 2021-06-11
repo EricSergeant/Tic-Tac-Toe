@@ -11,8 +11,6 @@ class Player {
     this.wins = wins || 0;
   }
   saveWinsToStorage() {
-    var storage = window.localStorage;
-    storage.clear();
     localStorage.setItem(`player${this.id}Data`, JSON.stringify(this.wins));
   }
   retrieveWinsFromStorage() {

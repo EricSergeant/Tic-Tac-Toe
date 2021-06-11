@@ -11,14 +11,30 @@ class Game {
   constructor(player1, player2) {
     this.player1Moves = [];
     this.player2Moves = [];
-    this.turn = ;
+    this.player1 = new Player(1, "./assets/blackMage.png", 0);
+    this.player2 = new Player(2, ".assets/whiteMage.png", 0);
+    this.turn = this.player1;
+    this.playCounter = 0;
     this.isWon = false;
     this.isDraw = false;
+  }
+  //track game Data
+  //track of player turn
+  
 
-    }
-    //function to reset game board for new game
+
+  winningSequences() {
 
   }
-}
 
-module.exports = Game;
+  checkForWin() {
+
+  }
+  checkForDraw() {
+
+  }
+  resetGame() {
+
+  }
+
+}
