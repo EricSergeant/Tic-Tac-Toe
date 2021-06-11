@@ -1,0 +1,89 @@
+* {
+  border: 2px solid green;
+}
+
+/* html */
+html,
+body,
+main {
+  height: 100%;
+  width: 100%;
+  font-family: sans-serif;
+  font-size: 1.25em;
+  margin: 0px;
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+}
+
+/* .player-1-side,
+.player-2-side {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+} */
+
+aside {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 25%;
+}
+
+.player-1-side {
+  background: linear-gradient(#FFFFFF, #FFFFFF, #0D47A1, #000000);
+}
+
+.player-2-side {
+  background: linear-gradient(#FFFFFF, #FFFFFF, #C70039, #000000);
+}
+
+.game-area {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-grow: 1;
+  /* background: linear-gradient(#FFFFFF, #0D47A1, #DAF7A6, #FFC300, #FF5733, #C70039, #000000); */
+  /* background: linear-gradient(#FFFFFF, #FFFFFF, #DAF7A6); */
+  /* background: #DAF7A6; */
+  /* background: radial-gradient(circle, #DAF7A6 0%, #FFFFFF 75%); */
+  background: linear-gradient(#FFFFFF 15%, #DAF7A6 60%, #FFFFFF 95%);
+}
+
+.player-turn-display-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+}
+
+.game-board {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-top: 10%;
+  width: 100%;
+  height: 50%;
+}
+
+.game-board > button {
+  width: 30%;
+  height: 30%;
+  background-color: grey;
+  border: 2px solid black;
+}
+
+.game-reset-button-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 20%;
+}
+
+.game-reset-button > buttton {
+  width: 20%;
+  height: 20%;
+  background-color: yellow;
+  border: 2px solid black;
+}
