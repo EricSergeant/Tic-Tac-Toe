@@ -44,7 +44,10 @@ aside {
   align-items: center;
   flex-grow: 1;
   /* background: linear-gradient(#FFFFFF, #0D47A1, #DAF7A6, #FFC300, #FF5733, #C70039, #000000); */
-  background: linear-gradient(#FFFFFF, #FFFFFF, #DAF7A6);
+  /* background: linear-gradient(#FFFFFF, #FFFFFF, #DAF7A6); */
+  /* background: #DAF7A6; */
+  /* background: radial-gradient(circle, #DAF7A6 0%, #FFFFFF 75%); */
+  background: linear-gradient(#FFFFFF 15%, #DAF7A6 60%, #FFFFFF 95%);
 }
 
 .player-turn-display-container {
@@ -67,5 +70,20 @@ aside {
   width: 30%;
   height: 30%;
   background-color: grey;
+  border: 2px solid black;
+}
+
+.game-reset-button-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 20%;
+}
+
+.game-reset-button > buttton {
+  width: 20%;
+  height: 20%;
+  background-color: yellow;
   border: 2px solid black;
 }
