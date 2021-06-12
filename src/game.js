@@ -36,9 +36,16 @@ class Game {
   }
 
   checkForWin() {
-
+    if (this.holdWinningMoves(this.player1Moves)) {
+      this.runWinningSequences();
+    } else if (this.holdWinningMoves(this.player2Moves)) {
+      this.runWinningSequences();
+    }
   }
   checkForDraw() {
+    if (this.turnCounter === 9) {
+      this.isDraw = true;
+    }
     // if there have been nine selections and isWon = false, then isDraw = true
   }
   runWinningSequences() {
