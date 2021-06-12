@@ -10,6 +10,7 @@ class Player {
     this.token = tokenAssetPath;
     this.wins = wins || 0;
   }
+  //when to push to storage?  After each win.
   saveWinsToStorage() {
     localStorage.setItem(`player${this.id}Data`, JSON.stringify(this.wins));
   }

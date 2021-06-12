@@ -21,13 +21,14 @@ class Game {
   //track game Data - current moves are stored in array above
   //selecting moves and capturing will occur in main.js and pass argument "moveMade" of button
   recordPlayerMove(moveMade) {
-    if (this.turn.id === this.player1.id) {
+    if (this.turn === this.player1) {
       this.player1Moves.push(moveMade);
-    } else if (this.turn === this.player2.id) {
+    } else if (this.turn === this.player2) {
       this.player2Moves.push(moveMade);
     }
-    checkForWin();
-    checkForDraw();
+    this.playerTurnCounter++;
+    this.checkForWin();
+    this.checkForDraw();
   }
   //track of player turn. Turn tracker above, invoke function in checkForWin()?
   changePlayerTurn() {
@@ -56,10 +57,11 @@ class Game {
     } else if (this.holdWinningMoves(this.player2Moves)) {
       this.runWinningSequences();
     }
-    changePlayerTurn();
+    //add a saveWinsToStorage invocation here?
+    this.changePlayerTurn();
   }
   checkForDraw() {
-    if (this.turnCounter === 9) {
+    if (this.playerTurnCounerurnCounter === 9) {
       this.isDraw = true;
     }
     // if there have been nine selections and isWon = false, then isDraw = true
