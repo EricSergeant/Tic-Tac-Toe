@@ -35,3 +35,25 @@ window.addEventListener('load', startGameOnLoad());
 startGameOnLoad() {
   // need to check on saved data and repopulate scores accordingly
 }
+
+renderWinCountDisplay() {
+  // shows the number of wins for each player
+}
+
+showWinningMessage() {
+  // will show which player won along with their icon
+}
+
+showDrawMessage() {
+  // will show a message in case of a draw
+}
+
+showPlayerTurn() {
+  // will display the current player's turn and icon
+}
+
+selectSquareChoice() {
+  // will allow button(square) to be selected
+  // will disable button for re-click
+  // will show icon in selected button
+}
