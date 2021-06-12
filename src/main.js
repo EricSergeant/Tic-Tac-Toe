@@ -24,23 +24,22 @@ var currentGame = new Game;
 // 👇 event listeners go here 👇
 window.addEventListener('load', startGameOnLoad);
 resetScoreButton.addEventListener('click', resetScores);
-// need to add:
-//  event listener for each button in board
-// OPTION ONE:
-// a1.addEventListener('click', function(event) {
-//   selectSquareChoice();
-// })
-// OPTION TWO:
 gameBoard.addEventListener('click', selectSquareChoice);
+
 
 // 👇 functions and event handlers go here 👇
 function startGameOnLoad() {
   console.log('clicked startGameOnLoad');
+  renderWinCountDisplay();
 }
 // need to check on saved data and repopulate scores accordingly
 
 function renderWinCountDisplay() {
   // shows the number of wins for each player
+  currentGame.player1.retrieveWinsFromStorage();
+  currentGame.player2.retrieveWinsFromStorage();
+  player1WinCount.innerText = `${currentGame.player1.wins}`;
+  player2WinCount.innerText = `${currentGame.player2.wins}`;
   console.log('clicked renderWinCountDisplay');
 }
 
@@ -63,7 +62,8 @@ function selectSquareChoice() {
   // will allow button(square) to be selected
   // will show icon in selected button
   // will game.recordPlayerMove(moveClass)
-  console.log('clicked selectSquareChoice');
+  var buttonID = event.target.getAttribute('id');
+  console.log(`clicked selectSquareChoice ${buttonID}`);
 }
 
 function disableSelectSquare() {
