@@ -18,9 +18,23 @@ class Game {
     this.isWon = false;
     this.isDraw = false;
   }
-  //track game Data
+  //track game Data - current moves are stored in array above
+  //selecting moves and capturing that will occur in main.js and pass argument "moveMade" of button
+  recordPlayerMove(moveMade) {
+    if (this.turn.id === this.player1.id) {
+      this.player1Moves.push(moveMade);
+    } else if (this.turn === this.player2.id) {
+      this.player2Moves.push(moveMade);
+    }
+    checkForWin();
+    checkForDraw();
+    changePlayerTurn();
+  }
+  //track of player turn - change it!  Turn tracker above, could we manipulate it through main.js?
+  changePlayerTurn() {
 
-  //track of player turn - change it!
+  }
+
   holdWinningMoves(playerMoves) {
     if (playerMoves.includes("a1") && playerMoves.includes("a2") && playerMoves.includes("a3") ||
       playerMoves.includes("b1") && playerMoves.includes("b2") && playerMoves.includes("b3") ||
@@ -34,7 +48,6 @@ class Game {
     return true;
     }
   }
-
   checkForWin() {
     if (this.holdWinningMoves(this.player1Moves)) {
       this.runWinningSequences();
