@@ -5,9 +5,9 @@
 // retrieveWinsFromStorage
 
 class Player {
-  constructor(id, tokenPiece, wins) {
+  constructor(id, tokenAssetPath, wins) {
     this.id = id;
-    this.token = tokenPiece;
+    this.token = tokenAssetPath;
     this.wins = wins || 0;
   }
   saveWinsToStorage() {
