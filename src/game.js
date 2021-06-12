@@ -70,10 +70,14 @@ class Game {
     this.isWon=true;
     this.turn.wins++;
     this.turn.saveWinsToStorage();
-    // do we need resetGame() as well?
+    // do we need this resetGame() as well?
+    this.resetGame();
   }
   resetGame() {
-    // will use to reset game board, playerTurnCouner, isWon=false
+    // will use to reset game board, playerTurnCounter, isWon=false
+    this.playerTurnCounter = 0;
+    this.isWon = false;
+    this.isDraw = false;
   }
 
 }
