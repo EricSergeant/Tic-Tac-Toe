@@ -64,8 +64,9 @@ class Game {
     //add a saveWinsToStorage invocation here?
   }
   checkForDraw() {
-    if (this.playerTurnCounerurnCounter === 9) {
+    if (this.playerTurnCounter === 9) {
       this.isDraw = true;
+      this.resetGame();
     }
     // if there have been nine selections and isWon = false, then isDraw = true
   }

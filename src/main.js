@@ -107,6 +107,7 @@ function selectSquareChoice() {
 function checkStatus() {
   if(currentGame.playerTurnCounter === 9) {
     showDrawMessage();
+    disableAllButtons();
     //unlock butttons function call
     //reset buttons to blank function call
   } else if (currentGame.isWon) {
