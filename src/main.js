@@ -70,8 +70,8 @@ function showDrawMessage() {
 
 function showPlayerTurn() {
   // will display the current player's turn and icon
-  displayPlayerTurnId.innerText = `It's Player ${currentGame.turn.id}'s turn!`;
-  displayPlayerTurnToken.innerText = `${currentGame.turn.token}`;
+  displayPlayerTurnId.innerText = `It's Player ${currentGame.turn.id}'s Turn`;
+  displayPlayerTurnToken.innerHTML = `<img src="${currentGame.turn.token}" alt="Player ${currentGame.turn.id} Icon">`;
   console.log('clicked showPlayerTurn');
 }
 
@@ -82,19 +82,12 @@ function selectSquareChoice() {
   var buttonID = event.target.getAttribute('id');
   var square = event.target;
   square.disabled = true;
-  console.log(`buttonID is ${buttonID}`);
-  // disableSelectSquare(buttonID);
-  if (currentGame.turn.id === 1) {
-    square.innerText = `${currentGame.turn.token}`;
-    currentGame.recordPlayerMove(buttonID);
-    showPlayerTurn();
-    checkStatus();
-  } else if (currentGame.turn.id === 2) {
-    square.innerText = `${currentGame.turn.token}`;
-    currentGame.recordPlayerMove(buttonID);
-    showPlayerTurn();
-    checkStatus();
-  }
+  // console.log(`buttonID is ${buttonID}`);
+  square.innerHTML = `<img src="${currentGame.turn.token}" alt="Player ${currentGame.turn.id} Icon">`;
+  currentGame.recordPlayerMove(buttonID);
+  showPlayerTurn();
+  checkStatus();
+
   // if (currentGame.turn.id === 1) {
   //   // buttonID.innerText = `<img class="emoji" src="./assets/blackMageIcon.png" alt="Black Mage Icon">`;
   // } else if (currentGame.turn.id === 2) {
@@ -108,29 +101,14 @@ function checkStatus() {
   if(currentGame.playerTurnCounter === 9) {
     showDrawMessage();
     disableAllButtons();
-    //unlock butttons function call
-    //reset buttons to blank function call
   } else if (currentGame.isWon) {
     showWinningMessage();
     disableAllButtons();
-    //unlock butttons function call
-    //reset buttons to blank function call
   } else {
     console.log('checkStatus() was invoked');
     // showPlayerTurn();
   }
 }
-
-// function disableSelectSquare(buttonID) {
-//     // will disable button for re-click
-//     var p1Moves = currentGame.player1Moves;
-//     var p2Moves = currentGame.player2Moves;
-//     var allMoves = p1Moves.concat(p2Moves);
-//     if (allMoves.includes(buttonID)) {
-//       return true;
-//     }
-//     console.log('clicked disableSelectSquare');
-// }
 
 function disableAllButtons() {
   a1.disabled = true;
@@ -144,12 +122,15 @@ function disableAllButtons() {
   c3.disabled = true;
 }
 
+/*
 function enableAllSquares() {
+  // UPDATE: not needed when reload is creating the same effect
   // re-enable/unlock all squares after win or draw
 }
+*/
 
 function resetScores() {
-  // functionality for reset scores button, puts all back to zero wins in data model
+  // NEW FEATURE: functionality for reset scores button, puts all back to zero wins in data model
     console.log('clicked resetScores');
   // need to point to new function in game.js probably ???
 }

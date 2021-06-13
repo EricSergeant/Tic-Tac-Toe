@@ -19,8 +19,6 @@ class Game {
     this.isDraw = false;
   }
   //UPDATE: moved to main.js --> also need function to start a game on page load
-  //track game Data - current moves are stored in array above
-  //selecting moves and capturing will occur in main.js and pass argument "moveMade" of button
   recordPlayerMove(moveMade) {
     if (this.turn === this.player1) {
       this.player1Moves.push(moveMade);
@@ -61,7 +59,6 @@ class Game {
     } else {
       this.changePlayerTurn();
     }
-    //add a saveWinsToStorage invocation here?
   }
   checkForDraw() {
     if (this.playerTurnCounter === 9) {
@@ -88,7 +85,6 @@ class Game {
       this.isWon = false;
       this.isDraw = false;
     }, 3000);
-
   }
 
 }
