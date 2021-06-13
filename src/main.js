@@ -55,7 +55,7 @@ function renderWinCountDisplay() {
 
 function showWinningMessage() {
   // will show which player won along with their icon
-  displayPlayerTurnId.innerText = `Player ${currentGame.turn.id} won!!!`;
+  displayPlayerTurnId.innerText = `Player ${currentGame.turn.id} Won!!!`;
   displayPlayerTurnToken.innerText = `${currentGame.turn.token}`;
   console.log('clicked showWinningMessage');
 }
@@ -111,6 +111,7 @@ function checkStatus() {
     //reset buttons to blank function call
   } else if (currentGame.isWon) {
     showWinningMessage();
+    disableAllButtons();
     //unlock butttons function call
     //reset buttons to blank function call
   } else {
@@ -130,12 +131,20 @@ function checkStatus() {
 //     console.log('clicked disableSelectSquare');
 // }
 
-function enableAllSquares() {
-  // re-enable/unlock all squares after win or draw
+function disableAllButtons() {
+  a1.disabled = true;
+  a2.disabled = true;
+  a3.disabled = true;
+  b1.disabled = true;
+  b2.disabled = true;
+  b3.disabled = true;
+  c1.disabled = true;
+  c2.disabled = true;
+  c3.disabled = true;
 }
 
-function resetButtons() {
-  // reset all buttons to blank after win or draw
+function enableAllSquares() {
+  // re-enable/unlock all squares after win or draw
 }
 
 function resetScores() {

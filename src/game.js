@@ -12,7 +12,7 @@ class Game {
     this.player1Moves = [];
     this.player2Moves = [];
     this.player1 = new Player(1, "./assets/blackMageIcon.png", 0);
-    this.player2 = new Player(2, ".assets/whiteMageIcon.png", 0);
+    this.player2 = new Player(2, "./assets/whiteMageIcon.png", 0);
     this.turn = this.player1;
     this.playerTurnCounter = 0;
     this.isWon = false;
@@ -73,14 +73,21 @@ class Game {
     this.isWon=true;
     this.turn.wins++;
     this.turn.saveWinsToStorage();
+    // setTimeout(function() {
+    //   this.resetGame(); }, 3000);
+    this.resetGame();
     // do we need this resetGame() as well?
     // this.resetGame();
   }
   resetGame() {
     // will use to reset game board, playerTurnCounter, isWon=false
-    this.playerTurnCounter = 0;
-    this.isWon = false;
-    this.isDraw = false;
+    setTimeout(function() {
+      location.reload();
+      this.playerTurnCounter = 0;
+      this.isWon = false;
+      this.isDraw = false;
+    }, 3000);
+
   }
 
 }
