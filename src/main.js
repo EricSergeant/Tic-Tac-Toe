@@ -56,7 +56,7 @@ function renderWinCountDisplay() {
 function showWinningMessage() {
   // will show which player won along with their icon
   displayPlayerTurnId.innerText = `Player ${currentGame.turn.id} Won!!!`;
-  displayPlayerTurnToken.innerText = `${currentGame.turn.token}`;
+  displayPlayerTurnToken.innerHTML = `<img src="${currentGame.turn.token}" alt="Player ${currentGame.turn.id} Icon">`;
   console.log('clicked showWinningMessage');
 }
 
