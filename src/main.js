@@ -39,7 +39,18 @@ c3.addEventListener('click', selectSquareChoice);
 
 // 👇 functions and event handlers go here 👇
 function startGameOnLoad() {
-  console.log('clicked startGameOnLoad');
+  currentGame.turn = currentGame.retrieveTurnFromStorage();
+  // if (currentGame.turn === currentGame.player1) {
+  //   currentGame.turn = currentGame.player2;
+  // } else {
+  //   currentGame.turn = currentGame.player1;
+  // }
+  if (currentGame.turn === 1) {
+    currentGame.turn = currentGame.player2;
+  } else {
+    currentGame.turn = currentGame.player1;
+  }
+
   renderWinCountDisplay();
   showPlayerTurn();
 }
@@ -65,7 +76,8 @@ function showWinningMessage() {
   // will show which player won along with their icon
   displayPlayerTurnId.innerText = `Player ${currentGame.turn.id} Won!!!`;
   displayPlayerTurnToken.innerHTML = `<img src="${currentGame.turn.token}" alt="Player ${currentGame.turn.id} Icon">`;
-  console.log('clicked showWinningMessage');
+  currentGame.saveTurnToStorage();
+  console.log(`Current turn is: ${currentGame.turn.id}.`);
 }
 
 function showDrawMessage() {
@@ -137,6 +149,11 @@ function enableAllSquares() {
 
 function resetScores() {
   // NEW FEATURE: functionality for reset scores button, puts all back to zero wins in data model
-    console.log('clicked resetScores');
+    location.reload();
+    this.playerTurnCounter = 0;
+    this.isWon = false;
+    this.isDraw = false;
+    localStorage.clear();
+    console.log('clicked resetScores buttton')
   // need to point to new function in game.js probably ???
 }

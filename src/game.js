@@ -13,7 +13,7 @@ class Game {
     this.player2Moves = [];
     this.player1 = new Player(1, "./assets/blackMageIcon.png", 0, true);
     this.player2 = new Player(2, "./assets/whiteMageIcon.png", 0, false);
-    this.turn = this.player1;
+    this.turn;
     this.playerTurnCounter = 0;
     this.isWon = false;
     this.isDraw = false;
@@ -96,6 +96,7 @@ class Game {
     this.isWon=true;
     this.turn.wins++;
     this.turn.saveWinsToStorage();
+    // this.turn.saveTurnToStorage();
     // setTimeout(function() {
     //   this.resetGame(); }, 3000);
     this.resetGame();
@@ -110,6 +111,12 @@ class Game {
       this.isWon = false;
       this.isDraw = false;
     }, 3000);
+  }
+  saveTurnToStorage() {
+    localStorage.setItem(`playerTurnData`, JSON.stringify(this.turn.id));
+  }
+  retrieveTurnFromStorage() {
+    this.turn = JSON.parse(localStorage.getItem(`playerTurnData`));
   }
 
 }
