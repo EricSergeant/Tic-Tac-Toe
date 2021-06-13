@@ -39,16 +39,20 @@ c3.addEventListener('click', selectSquareChoice);
 
 // 👇 functions and event handlers go here 👇
 function startGameOnLoad() {
-  currentGame.turn = currentGame.retrieveTurnFromStorage();
+  // currentGame.turn = currentGame.retrieveTurnFromStorage();
+
   // if (currentGame.turn === currentGame.player1) {
   //   currentGame.turn = currentGame.player2;
   // } else {
   //   currentGame.turn = currentGame.player1;
   // }
+  currentGame.turn = currentGame.retrieveTurnFromStorage();
   if (currentGame.turn === 1) {
     currentGame.turn = currentGame.player2;
-  } else {
+  } else if (currentGame.turn = currentGame.player1) {
     currentGame.turn = currentGame.player1;
+  } else {
+    console.log(`Here's the broken turn: ${currentGame.turn}.`)
   }
 
   renderWinCountDisplay();
@@ -76,7 +80,7 @@ function showWinningMessage() {
   // will show which player won along with their icon
   displayPlayerTurnId.innerText = `Player ${currentGame.turn.id} Won!!!`;
   displayPlayerTurnToken.innerHTML = `<img src="${currentGame.turn.token}" alt="Player ${currentGame.turn.id} Icon">`;
-  currentGame.saveTurnToStorage();
+  // currentGame.saveTurnToStorage();
   console.log(`Current turn is: ${currentGame.turn.id}.`);
 }
 

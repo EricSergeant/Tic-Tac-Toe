@@ -96,7 +96,8 @@ class Game {
     this.isWon=true;
     this.turn.wins++;
     this.turn.saveWinsToStorage();
-    // this.turn.saveTurnToStorage();
+    this.saveTurnToStorage();
+    console.log(`The saved id should be: ${this.turn.id}`);
     // setTimeout(function() {
     //   this.resetGame(); }, 3000);
     this.resetGame();
