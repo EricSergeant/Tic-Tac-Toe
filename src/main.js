@@ -41,8 +41,16 @@ function renderWinCountDisplay() {
   // shows the number of wins for each player
   currentGame.player1.retrieveWinsFromStorage();
   currentGame.player2.retrieveWinsFromStorage();
-  player1WinCount.innerText = `${currentGame.player1.wins}`;
-  player2WinCount.innerText = `${currentGame.player2.wins}`;
+  if (currentGame.player1.wins >= 0) {
+    player1WinCount.innerText = `${currentGame.player1.wins}`;
+  } else {
+    player1WinCount.innerText = `0`;
+  }
+  if (currentGame.player2.wins >= 0) {
+    player2WinCount.innerText = `${currentGame.player2.wins}`;
+  } else {
+    player2WinCount.innerText = `0`;
+  }
   console.log('clicked renderWinCountDisplay');
 }
 
@@ -78,12 +86,12 @@ function selectSquareChoice() {
   // console.log(`clicked selectSquareChoice ${buttonID}`);
   if (currentGame.turn.id === 1) {
     // buttonID.innerText = `<img class="emoji" src="./assets/blackMageIcon.png" alt="Black Mage Icon">`;
-    square.innerText = `${currentGame.turn.id}`;
+    square.innerText = `${currentGame.turn.token}`;
     currentGame.recordPlayerMove(buttonID);
     showPlayerTurn();
     checkStatus();
   } else if (currentGame.turn.id === 2) {
-    square.innerText = `${currentGame.turn.id}`;
+    square.innerText = `${currentGame.turn.token}`;
     currentGame.recordPlayerMove(buttonID);
     showPlayerTurn();
     checkStatus();
@@ -95,8 +103,12 @@ function selectSquareChoice() {
 function checkStatus() {
   if(currentGame.playerTurnCounter === 9) {
     showDrawMessage();
+    //unlock butttons function call
+    //reset buttons to blank function call
   } else if (currentGame.isWon) {
     showWinningMessage();
+    //unlock butttons function call
+    //reset buttons to blank function call
   } else {
     console.log('noted');
     // showPlayerTurn();
@@ -106,6 +118,14 @@ function checkStatus() {
 function disableSelectSquare() {
     // will disable button for re-click
     console.log('clicked disableSelectSquare');
+}
+
+function enableAllSquares() {
+  // re-enable/unlock all squares after win or draw
+}
+
+function resetButtons() {
+  // reset all buttons to blank after win or draw
 }
 
 function resetScores() {
