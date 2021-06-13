@@ -11,23 +11,24 @@ class Game {
   constructor(player1, player2) {
     this.player1Moves = [];
     this.player2Moves = [];
-    this.player1 = new Player(1, "./assets/blackMage.png", 0);
-    this.player2 = new Player(2, ".assets/whiteMage.png", 0);
+    this.player1 = new Player(1, "./assets/blackMageIcon.png", 0);
+    this.player2 = new Player(2, ".assets/whiteMageIcon.png", 0);
     this.turn = this.player1;
     this.playerTurnCounter = 0;
     this.isWon = false;
     this.isDraw = false;
   }
-  //UPDATE: moved to main.js --> also need function to start a game on page load 
+  //UPDATE: moved to main.js --> also need function to start a game on page load
   //track game Data - current moves are stored in array above
   //selecting moves and capturing will occur in main.js and pass argument "moveMade" of button
   recordPlayerMove(moveMade) {
     if (this.turn === this.player1) {
       this.player1Moves.push(moveMade);
+      this.playerTurnCounter++;
     } else if (this.turn === this.player2) {
       this.player2Moves.push(moveMade);
+      this.playerTurnCounter++;
     }
-    this.playerTurnCounter++;
     this.checkForWin();
     this.checkForDraw();
   }
@@ -57,9 +58,10 @@ class Game {
       this.runWinningSequences();
     } else if (this.holdWinningMoves(this.player2Moves)) {
       this.runWinningSequences();
+    } else {
+      this.changePlayerTurn();
     }
     //add a saveWinsToStorage invocation here?
-    this.changePlayerTurn();
   }
   checkForDraw() {
     if (this.playerTurnCounerurnCounter === 9) {
@@ -72,7 +74,7 @@ class Game {
     this.turn.wins++;
     this.turn.saveWinsToStorage();
     // do we need this resetGame() as well?
-    this.resetGame();
+    // this.resetGame();
   }
   resetGame() {
     // will use to reset game board, playerTurnCounter, isWon=false

@@ -1,9 +1,10 @@
 
 // 👇 query selectors here...👇
 var gameBoard = document.querySelector('.game-board');
+// var squares = document.querySelector('.square');
 var player1WinCount = document.querySelector('.player-1-wins');
 var player2WinCount = document.querySelector('.player-2-wins');
-var dsiplayPlayerTurnId = document.querySelector('.player-name-turn-display');
+var displayPlayerTurnId = document.querySelector('.player-name-turn-display');
 var displayPlayerTurnToken = document.querySelector('.player-icon-turn-display');
 var resetScoreButton = document.querySelector('.reset-scores-to-zero');
 var a1 = document.getElementById('a1');
@@ -25,12 +26,14 @@ var currentGame = new Game;
 window.addEventListener('load', startGameOnLoad);
 resetScoreButton.addEventListener('click', resetScores);
 gameBoard.addEventListener('click', selectSquareChoice);
+// squares.addEventListener('click', selectSquareChoice);
 
 
 // 👇 functions and event handlers go here 👇
 function startGameOnLoad() {
   console.log('clicked startGameOnLoad');
   renderWinCountDisplay();
+  showPlayerTurn();
 }
 // need to check on saved data and repopulate scores accordingly
 
@@ -44,42 +47,61 @@ function renderWinCountDisplay() {
 }
 
 function showWinningMessage() {
+  displayPlayerTurnId.innerText = `Player ${currentGame.turn.id} won!!!`;
+  displayPlayerTurnToken.innerText = `${currentGame.turn.token}`;
+  // currentGame.changePlayerTurn();
   // will show which player won along with their icon
   console.log('clicked showWinningMessage');
 }
 
 function showDrawMessage() {
+  displayPlayerTurnId.innerText = `It's a draw, try again!`;
+  // currentGame.changePlayerTurn();
+  // displayPlayerTurnToken.innerText = `${currentGame.turn.token}`;
   // will show a message in case of a draw
   console.log('clicked showDrawMessage');
 }
 
 function showPlayerTurn() {
+  displayPlayerTurnId.innerText = `It's Player ${currentGame.turn.id}'s turn!`;
+  displayPlayerTurnToken.innerText = `${currentGame.turn.token}`;
   // will display the current player's turn and icon
   console.log('clicked showPlayerTurn');
 }
 
 
 function selectSquareChoice() {
-  // will allow button(square) to be selected
   // will show icon in selected button
   // will game.recordPlayerMove(moveClass)
-  currentGame.playerTurnCounter++;
   var buttonID = event.target.getAttribute('id');
   var square = event.target;
   // console.log(`clicked selectSquareChoice ${buttonID}`);
   if (currentGame.turn.id === 1) {
     // buttonID.innerText = `<img class="emoji" src="./assets/blackMageIcon.png" alt="Black Mage Icon">`;
-    square.innerHTML = `${currentGame.turn.id}`;
-    currentGame.changePlayerTurn();
+    square.innerText = `${currentGame.turn.id}`;
+    currentGame.recordPlayerMove(buttonID);
+    showPlayerTurn();
+    checkStatus();
   } else if (currentGame.turn.id === 2) {
     square.innerText = `${currentGame.turn.id}`;
-    currentGame.changePlayerTurn();
-  } else {
-    return;
+    currentGame.recordPlayerMove(buttonID);
+    showPlayerTurn();
+    checkStatus();
   }
+  // showPlayerTurn();
   // need to add if !null
 }
 
+function checkStatus() {
+  if(currentGame.playerTurnCounter === 9) {
+    showDrawMessage();
+  } else if (currentGame.isWon) {
+    showWinningMessage();
+  } else {
+    console.log('noted');
+    // showPlayerTurn();
+  }
+}
 
 function disableSelectSquare() {
     // will disable button for re-click
