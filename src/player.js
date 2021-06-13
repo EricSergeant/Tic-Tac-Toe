@@ -5,17 +5,24 @@
 // retrieveWinsFromStorage
 
 class Player {
-  constructor(id, tokenAssetPath, wins) {
+  constructor(id, tokenAssetPath, wins, isTurn) {
     this.id = id;
     this.token = tokenAssetPath;
-    this.wins = wins || 0;
+    this.wins = wins;
+    this.isTurn = isTurn;
   }
   //when to push to storage?  After each win.
   saveWinsToStorage() {
-    localStorage.setItem(`player${this.id}Data`, JSON.stringify(this.wins));
+    localStorage.setItem(`player${this.id}WinData`, JSON.stringify(this.wins));
   }
   retrieveWinsFromStorage() {
-    this.wins = JSON.parse(localStorage.getItem(`player${this.id}Data`));
+    this.wins = JSON.parse(localStorage.getItem(`player${this.id}WinData`));
+  }
+  saveTurnToStorage() {
+    localStorage.setItem(`player${this.id}TurnData`, JSON.stringify(this.turn));
+  }
+  retrieveTurnFromStorage() {
+    this.wins = JSON.parse(localStorage.getItem(`player${this.id}TurnData`));
   }
 
 }

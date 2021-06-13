@@ -11,8 +11,8 @@ class Game {
   constructor(player1, player2) {
     this.player1Moves = [];
     this.player2Moves = [];
-    this.player1 = new Player(1, "./assets/blackMageIcon.png", 0);
-    this.player2 = new Player(2, "./assets/whiteMageIcon.png", 0);
+    this.player1 = new Player(1, "./assets/blackMageIcon.png", 0, true);
+    this.player2 = new Player(2, "./assets/whiteMageIcon.png", 0, false);
     this.turn = this.player1;
     this.playerTurnCounter = 0;
     this.isWon = false;
@@ -20,16 +20,19 @@ class Game {
   }
   //UPDATE: moved to main.js --> also need function to start a game on page load
   recordPlayerMove(moveMade) {
-    if (this.turn === this.player1) {
+    if (this.player1.isTurn) {
+      // this.turn = this.player1;
       this.player1Moves.push(moveMade);
       this.playerTurnCounter++;
-    } else if (this.turn === this.player2) {
+    } else if (this.player2.isTurn) {
+      // this.turn = this.player2;
       this.player2Moves.push(moveMade);
       this.playerTurnCounter++;
     }
     this.checkForWin();
     this.checkForDraw();
   }
+  /*
   //track of player turn. Turn tracker above, invoke function in checkForWin()?
   changePlayerTurn() {
     if (this.turn === this.player1) {
@@ -38,6 +41,27 @@ class Game {
       this.turn = this.player1;
     }
   }
+*/
+  getTurnInfo() {
+    console.log(`It is ${this.turn} time`);
+    if (this.player1.isTurn === true) {
+      return this.turn = this.player1.id;
+    } else {
+      return this.turn = this.player2.id;
+    }
+  }
+
+  changePlayerTurn() {
+    if (this.player1.isTurn === true) {
+      this.turn = this.player2;
+    } else {
+      this.turn = this.player1;
+    }
+    this.player1.isTurn = !this.player1.isTurn;
+    this.player2.isTurn = !this.player2.isTurn;
+    console.log('invoked changePlayerTurn here');
+  }
+
   holdWinningMoves(playerMoves) {
     if (playerMoves.includes("a1") && playerMoves.includes("a2") && playerMoves.includes("a3") ||
       playerMoves.includes("b1") && playerMoves.includes("b2") && playerMoves.includes("b3") ||
@@ -58,6 +82,7 @@ class Game {
       this.runWinningSequences();
     } else {
       this.changePlayerTurn();
+      console.log('ran checkForWin here');
     }
   }
   checkForDraw() {

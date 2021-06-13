@@ -25,9 +25,17 @@ var currentGame = new Game;
 // 👇 event listeners go here 👇
 window.addEventListener('load', startGameOnLoad);
 resetScoreButton.addEventListener('click', resetScores);
-gameBoard.addEventListener('click', selectSquareChoice);
+// gameBoard.addEventListener('click', selectSquareChoice);
 // squares.addEventListener('click', selectSquareChoice);
-
+a1.addEventListener('click', selectSquareChoice);
+a2.addEventListener('click', selectSquareChoice);
+a3.addEventListener('click', selectSquareChoice);
+b1.addEventListener('click', selectSquareChoice);
+b2.addEventListener('click', selectSquareChoice);
+b3.addEventListener('click', selectSquareChoice);
+c1.addEventListener('click', selectSquareChoice);
+c2.addEventListener('click', selectSquareChoice);
+c3.addEventListener('click', selectSquareChoice);
 
 // 👇 functions and event handlers go here 👇
 function startGameOnLoad() {
@@ -81,13 +89,11 @@ function selectSquareChoice() {
   // will game.recordPlayerMove(moveClass)
   var buttonID = event.target.getAttribute('id');
   var square = event.target;
-  square.disabled = true;
-  // console.log(`buttonID is ${buttonID}`);
-  square.innerHTML = `<img src="${currentGame.turn.token}" alt="Player ${currentGame.turn.id} Icon">`;
-  currentGame.recordPlayerMove(buttonID);
-  showPlayerTurn();
-  checkStatus();
-
+    square.disabled = true;
+    square.innerHTML = `<img src="${currentGame.turn.token}" alt="Player ${currentGame.turn.id} Icon">`;
+    currentGame.recordPlayerMove(buttonID);
+    showPlayerTurn();
+    checkStatus();
   // if (currentGame.turn.id === 1) {
   //   // buttonID.innerText = `<img class="emoji" src="./assets/blackMageIcon.png" alt="Black Mage Icon">`;
   // } else if (currentGame.turn.id === 2) {
