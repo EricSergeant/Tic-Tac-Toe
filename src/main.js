@@ -1,20 +1,20 @@
 
 // 👇 query selectors here...👇
-var gameBoard = document.getElementById('gameBoard');
+var gameBoard = document.querySelector('.game-board');
 var player1WinCount = document.querySelector('.player-1-wins');
 var player2WinCount = document.querySelector('.player-2-wins');
 var dsiplayPlayerTurnId = document.querySelector('.player-name-turn-display');
 var displayPlayerTurnToken = document.querySelector('.player-icon-turn-display');
 var resetScoreButton = document.querySelector('.reset-scores-to-zero');
-var a1 = document.querySelector('.a1');
-var a2 = document.querySelector('.a2');
-var a3 = document.querySelector('.a3');
-var b1 = document.querySelector('.b1');
-var b2 = document.querySelector('.b2');
-var b3 = document.querySelector('.b3');
-var c1 = document.querySelector('.c1');
-var c2 = document.querySelector('.c2');
-var c3 = document.querySelector('.c3');
+var a1 = document.getElementById('a1');
+var a2 = document.getElementById('a2');
+var a3 = document.getElementById('a3');
+var b1 = document.getElementById('b1');
+var b2 = document.getElementById('b2');
+var b3 = document.getElementById('b3');
+var c1 = document.getElementById('c1');
+var c2 = document.getElementById('c2');
+var c3 = document.getElementById('c3');
 
 // 👇 global variables go here...👇
 var currentGame = new Game;
@@ -58,13 +58,28 @@ function showPlayerTurn() {
   console.log('clicked showPlayerTurn');
 }
 
+
 function selectSquareChoice() {
   // will allow button(square) to be selected
   // will show icon in selected button
   // will game.recordPlayerMove(moveClass)
+  currentGame.playerTurnCounter++;
   var buttonID = event.target.getAttribute('id');
-  console.log(`clicked selectSquareChoice ${buttonID}`);
+  var square = event.target;
+  // console.log(`clicked selectSquareChoice ${buttonID}`);
+  if (currentGame.turn.id === 1) {
+    // buttonID.innerText = `<img class="emoji" src="./assets/blackMageIcon.png" alt="Black Mage Icon">`;
+    square.innerHTML = `${currentGame.turn.id}`;
+    currentGame.changePlayerTurn();
+  } else if (currentGame.turn.id === 2) {
+    square.innerText = `${currentGame.turn.id}`;
+    currentGame.changePlayerTurn();
+  } else {
+    return;
+  }
+  // need to add if !null
 }
+
 
 function disableSelectSquare() {
     // will disable button for re-click
