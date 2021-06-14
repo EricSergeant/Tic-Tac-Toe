@@ -32,16 +32,7 @@ class Game {
     this.checkForWin();
     this.checkForDraw();
   }
-  /*
-  //track of player turn. Turn tracker above, invoke function in checkForWin()?
-  changePlayerTurn() {
-    if (this.turn === this.player1) {
-      this.turn = this.player2;
-    } else {
-      this.turn = this.player1;
-    }
-  }
-*/
+
   getTurnInfo() {
     console.log(`It is ${this.turn} time`);
     if (this.player1.isTurn === true) {
@@ -96,21 +87,10 @@ class Game {
     this.isWon=true;
     this.turn.wins++;
     this.turn.saveWinsToStorage();
-    this.saveTurnToStorage();
     console.log(`The saved id should be: ${this.turn.id}`);
     // setTimeout(function() {
     //   this.resetGame(); }, 3000);
     this.resetGame();
-    currentGame.retrieveTurnFromStorage();
-    // if (this.turn === this.player1) {
-    //   this.player1.isTurn = false;
-    //   this.player2.isTurn = true;
-    //   this.turn = this.player2;
-    //   } else {
-    //   this.player1.isTurn = true;
-    //   this.player2.isTurn = false;
-    //   this.turn = this.player1;
-    //   }
   }
   resetGame() {
     // will use to reset game board, playerTurnCounter, isWon=false
@@ -123,9 +103,6 @@ class Game {
   }
   saveTurnToStorage() {
     localStorage.setItem(`playerTurnData`, JSON.stringify(this.turn));
-  }
-  retrieveTurnFromStorage() {
-    this.turn = JSON.parse(localStorage.getItem(`playerTurnData`));
   }
 
 }

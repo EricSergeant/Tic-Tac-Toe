@@ -40,41 +40,10 @@ c3.addEventListener('click', selectSquareChoice);
 // 👇 functions and event handlers go here 👇
 function startGameOnLoad() {
   // currentGame.turn = currentGame.retrieveTurnFromStorage();
-
-  // if (currentGame.turn === currentGame.player1) {
-  //   currentGame.turn = currentGame.player2;
-  // } else {
-  //   currentGame.turn = currentGame.player1;
-  // }
-
-  // var holdingTurn = currentGame.retrieveTurnFromStorage();
-  // currentGame.turn = holdingTurn;
-
-  // currentGame.retrieveTurnFromStorage();
-  // if (currentGame.turn === currentGame.player1) {
-  //   currentGame.player1.isTurn = false;
-  //   currentGame.player2.isTurn = true;
-  //   currentGame.turn = currentGame.player2;
-  //   } else {
-  //   currentGame.player1.isTurn = true;
-  //   currentGame.player2.isTurn = false;
-  //   currentGame.turn = currentGame.player1;
-  //   }
     renderWinCountDisplay();
     showPlayerTurn();
   }
 
-  // *** last version attempted below: ***
-//   if (currentGame.retrieveTurnFromStorage() === 1) {
-//     currentGame.turn = currentGame.player2;
-//     currentGame.player2.isTurn = true;
-//   } else {
-//     currentGame.turn = currentGame.player1;
-//     currentGame.player1.isTurn = true;
-//   }
-//   renderWinCountDisplay();
-//   showPlayerTurn();
-// }
 
 function renderWinCountDisplay() {
   // shows the number of wins for each player
@@ -126,13 +95,6 @@ function selectSquareChoice() {
     currentGame.recordPlayerMove(buttonID);
     showPlayerTurn();
     checkStatus();
-  // if (currentGame.turn.id === 1) {
-  //   // buttonID.innerText = `<img class="emoji" src="./assets/blackMageIcon.png" alt="Black Mage Icon">`;
-  // } else if (currentGame.turn.id === 2) {
-  // } else if (disableSelectSquare(buttonID)) {
-  //   console.log('this was an outside click');
-  // }
-  // need to add if !null
 }
 
 function checkStatus() {
@@ -158,12 +120,6 @@ function disableAllButtons() {
   c3.disabled = true;
 }
 
-/*
-function enableAllSquares() {
-  // UPDATE: not needed when reload is creating the same effect
-  // re-enable/unlock all squares after win or draw
-}
-*/
 
 function resetScores() {
   // NEW FEATURE: functionality for reset scores button, puts all back to zero wins in data model
