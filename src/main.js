@@ -46,25 +46,42 @@ function startGameOnLoad() {
   // } else {
   //   currentGame.turn = currentGame.player1;
   // }
-  currentGame.turn = currentGame.retrieveTurnFromStorage();
-  if (currentGame.turn === 1) {
-    currentGame.turn = currentGame.player2;
-  } else if (currentGame.turn = currentGame.player1) {
-    currentGame.turn = currentGame.player1;
-  } else {
-    console.log(`Here's the broken turn: ${currentGame.turn}.`)
+
+  // var holdingTurn = currentGame.retrieveTurnFromStorage();
+  // currentGame.turn = holdingTurn;
+
+  // currentGame.retrieveTurnFromStorage();
+  // if (currentGame.turn === currentGame.player1) {
+  //   currentGame.player1.isTurn = false;
+  //   currentGame.player2.isTurn = true;
+  //   currentGame.turn = currentGame.player2;
+  //   } else {
+  //   currentGame.player1.isTurn = true;
+  //   currentGame.player2.isTurn = false;
+  //   currentGame.turn = currentGame.player1;
+  //   }
+    renderWinCountDisplay();
+    showPlayerTurn();
   }
 
-  renderWinCountDisplay();
-  showPlayerTurn();
-}
+  // *** last version attempted below: ***
+//   if (currentGame.retrieveTurnFromStorage() === 1) {
+//     currentGame.turn = currentGame.player2;
+//     currentGame.player2.isTurn = true;
+//   } else {
+//     currentGame.turn = currentGame.player1;
+//     currentGame.player1.isTurn = true;
+//   }
+//   renderWinCountDisplay();
+//   showPlayerTurn();
+// }
 
 function renderWinCountDisplay() {
   // shows the number of wins for each player
-  console.log(`pre-retrieve wins for P1: ${currentGame.player1.wins}.`);
+  // console.log(`pre-retrieve wins for P1: ${currentGame.player1.wins}.`);
   currentGame.player1.retrieveWinsFromStorage();
   currentGame.player2.retrieveWinsFromStorage();
-  console.log(`post-retrieve wins for P1: ${currentGame.player1.wins}.`);
+  // console.log(`post-retrieve wins for P1: ${currentGame.player1.wins}.`);
   if (currentGame.player1.wins === null) {
     player1WinCount.innerText = 0;
   } else {
@@ -75,7 +92,7 @@ function renderWinCountDisplay() {
   } else {
     player2WinCount.innerText = `${currentGame.player2.wins}`;
   }
-  console.log('clicked renderWinCountDisplay');
+  // console.log('clicked renderWinCountDisplay');
 }
 
 function showWinningMessage() {
@@ -89,7 +106,7 @@ function showWinningMessage() {
 function showDrawMessage() {
   // will show a message in case of a draw
   displayPlayerTurnId.innerText = `It's a draw, try again!`;
-  console.log('clicked showDrawMessage');
+  // console.log('clicked showDrawMessage');
 }
 
 function showPlayerTurn() {
@@ -125,9 +142,8 @@ function checkStatus() {
   } else if (currentGame.isWon) {
     showWinningMessage();
     disableAllButtons();
-  } else {
-    // console.log('checkStatus() was invoked');
   }
+    // console.log('checkStatus() was invoked');
 }
 
 function disableAllButtons() {
@@ -156,5 +172,4 @@ function resetScores() {
     this.isWon = false;
     this.isDraw = false;
     localStorage.clear();
-    console.log('clicked resetScores buttton')
 }
