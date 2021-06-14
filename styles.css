@@ -34,12 +34,20 @@ aside {
   /* max-width: 100%; */
 }
 .player-1-count {
-  max-width: 100%;
+  /* max-width: 100%; */
+  display: flex;
+  flex-direction: column;
+  text-shadow: 0 0 1px #0D47A1;
   /* align-items: stretch; */
+  /* justify-content: stretch; */
 }
 
 .player-2-side {
   background: linear-gradient(#FFFFFF, #FFFFFF, #C70039, #000000);
+}
+
+.player-2-count {
+  text-shadow: 0 0 1px #C70039;
 }
 
 .game-area {
@@ -60,6 +68,8 @@ aside {
   justify-content: center;
   text-align: center;
   width: 100%;
+  text-shadow:  0 0 2px green, 0 0 3px #DAF7A6;
+  /* text-shadow: 1px 1px green; */
 }
 
 .player-icon-turn-display {
@@ -76,15 +86,31 @@ aside {
   margin-left: 1%;
   margin-right: 1%;
   height: 50%;
-  background-color: #DAF7A6;
+  /* background-color: #DAF7A6; */
+  background-color: #a1b57e;
+  box-shadow: 0px 4px 8px grey;
 }
 
 .game-board > button {
   width: 30%;
   height: 30%;
   background-color: white;
-  /* border: 2px solid black; */
+  border: 0px;
+  cursor: pointer;
 }
+
+.blue-selected {
+  background-color: blue;
+}
+
+.red-selected {
+  background-color: red;
+}
+
+button:hover {
+  background-color: grey;
+}
+
 
 #b1,
 #b2,
@@ -134,7 +160,16 @@ aside {
 .game-reset-button-container > button {
   /* width: 20%;
   height: 20%; */
-  background-color: #DAF7A6;
+  /* background-color: #DAF7A6;
   border: 1px solid black;
-  border-radius: 4px;
+  border-radius: 4px; */
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0px 4px 8px grey;
+  /* transition: all 0.3s ease 0s; */
+  cursor: pointer;
+}
+
+.game-reset-button-container > button:hover {
+  background-color: yellow;
 }
