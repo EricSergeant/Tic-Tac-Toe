@@ -60,7 +60,12 @@ function renderWinCountDisplay() {
 
 function showWinningMessage() {
   // will show which player won along with their icon
-  displayPlayerTurnId.innerText = `Player ${currentGame.turn.id} Won!!!`;
+  if (currentGame.turn.id === 1) {
+    displayPlayerTurnId.innerText = `Blue Mage Won!!!`;
+  } else if (currentGame.turn.id === 2) {
+    displayPlayerTurnId.innerText = `Red Mage's Won!!!`;
+  }
+  // displayPlayerTurnId.innerText = `Player ${currentGame.turn.id} Won!!!`;
   displayPlayerTurnToken.innerHTML = `<img src="${currentGame.turn.token}" alt="Player ${currentGame.turn.id} Icon">`;
   // console.log(`Current turn is: ${currentGame.turn.id}.`);
 }
@@ -73,7 +78,12 @@ function showDrawMessage() {
 
 function showPlayerTurn() {
   // will display the current player's turn and icon
-  displayPlayerTurnId.innerText = `It's Player ${currentGame.turn.id}'s Turn`;
+  if (currentGame.turn.id === 1) {
+    displayPlayerTurnId.innerText = `It's Blue Mage's Turn`;
+  } else if (currentGame.turn.id === 2) {
+    displayPlayerTurnId.innerText = `It's Red Mage's Turn`;
+  }
+  // displayPlayerTurnId.innerText = `It's Player ${currentGame.turn.id}'s Turn`;
   displayPlayerTurnToken.innerHTML = `<img src="${currentGame.turn.token}" alt="Player ${currentGame.turn.id} Icon">`;
   console.log('clicked showPlayerTurn');
 }
