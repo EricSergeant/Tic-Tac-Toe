@@ -11,12 +11,10 @@ class Player {
     this.wins = wins || 0;
     this.isTurn = isTurn;
   }
-  //when to push to storage?  After each win.
   saveWinsToStorage() {
     localStorage.setItem(`player${this.id}WinData`, JSON.stringify(this.wins));
   }
   retrieveWinsFromStorage() {
     this.wins = JSON.parse(localStorage.getItem(`player${this.id}WinData`));
   }
-
 }

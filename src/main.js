@@ -1,7 +1,6 @@
 
 // 👇 query selectors here...👇
 var gameBoard = document.querySelector('.game-board');
-// var squares = document.querySelector('.square');
 var player1WinCount = document.querySelector('.player-1-wins');
 var player2WinCount = document.querySelector('.player-2-wins');
 var displayPlayerTurnId = document.querySelector('.player-name-turn-display');
@@ -25,8 +24,6 @@ var currentGame = new Game;
 // 👇 event listeners go here 👇
 window.addEventListener('load', startGameOnLoad);
 resetScoreButton.addEventListener('click', resetScores);
-// gameBoard.addEventListener('click', selectSquareChoice);
-// squares.addEventListener('click', selectSquareChoice);
 a1.addEventListener('click', selectSquareChoice);
 a2.addEventListener('click', selectSquareChoice);
 a3.addEventListener('click', selectSquareChoice);
@@ -39,7 +36,6 @@ c3.addEventListener('click', selectSquareChoice);
 
 // 👇 functions and event handlers go here 👇
 function startGameOnLoad() {
-  // currentGame.turn = currentGame.retrieveTurnFromStorage();
     renderWinCountDisplay();
     showPlayerTurn();
   }
@@ -47,10 +43,8 @@ function startGameOnLoad() {
 
 function renderWinCountDisplay() {
   // shows the number of wins for each player
-  // console.log(`pre-retrieve wins for P1: ${currentGame.player1.wins}.`);
   currentGame.player1.retrieveWinsFromStorage();
   currentGame.player2.retrieveWinsFromStorage();
-  // console.log(`post-retrieve wins for P1: ${currentGame.player1.wins}.`);
   if (currentGame.player1.wins === null) {
     player1WinCount.innerText = 0;
   } else {
@@ -68,8 +62,7 @@ function showWinningMessage() {
   // will show which player won along with their icon
   displayPlayerTurnId.innerText = `Player ${currentGame.turn.id} Won!!!`;
   displayPlayerTurnToken.innerHTML = `<img src="${currentGame.turn.token}" alt="Player ${currentGame.turn.id} Icon">`;
-  // currentGame.saveTurnToStorage();
-  console.log(`Current turn is: ${currentGame.turn.id}.`);
+  // console.log(`Current turn is: ${currentGame.turn.id}.`);
 }
 
 function showDrawMessage() {

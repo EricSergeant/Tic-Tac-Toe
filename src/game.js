@@ -21,18 +21,15 @@ class Game {
   //UPDATE: moved to main.js --> also need function to start a game on page load
   recordPlayerMove(moveMade) {
     if (this.player1.isTurn) {
-      // this.turn = this.player1;
       this.player1Moves.push(moveMade);
       this.playerTurnCounter++;
     } else if (this.player2.isTurn) {
-      // this.turn = this.player2;
       this.player2Moves.push(moveMade);
       this.playerTurnCounter++;
     }
     this.checkForWin();
     this.checkForDraw();
   }
-
   getTurnInfo() {
     console.log(`It is ${this.turn} time`);
     if (this.player1.isTurn === true) {
@@ -41,7 +38,6 @@ class Game {
       return this.turn = this.player2.id;
     }
   }
-
   changePlayerTurn() {
     if (this.player1.isTurn === true) {
       this.turn = this.player2;
@@ -52,7 +48,6 @@ class Game {
     this.player2.isTurn = !this.player2.isTurn;
     console.log('invoked changePlayerTurn here');
   }
-
   holdWinningMoves(playerMoves) {
     if (playerMoves.includes("a1") && playerMoves.includes("a2") && playerMoves.includes("a3") ||
       playerMoves.includes("b1") && playerMoves.includes("b2") && playerMoves.includes("b3") ||
@@ -81,15 +76,12 @@ class Game {
       this.isDraw = true;
       this.resetGame();
     }
-    // if there have been nine selections and isWon = false, then isDraw = true
   }
   runWinningSequences() {
     this.isWon=true;
     this.turn.wins++;
     this.turn.saveWinsToStorage();
     console.log(`The saved id should be: ${this.turn.id}`);
-    // setTimeout(function() {
-    //   this.resetGame(); }, 3000);
     this.resetGame();
   }
   resetGame() {
