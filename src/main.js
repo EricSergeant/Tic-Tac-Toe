@@ -85,6 +85,13 @@ function selectSquareChoice() {
   var square = event.target;
     square.disabled = true;
     square.innerHTML = `<img src="${currentGame.turn.token}" alt="Player ${currentGame.turn.id} Icon">`;
+    if (currentGame.turn.id === 1) {
+      square.classList.add('blue-selected');
+    } else {
+      square.classList.add('red-selected');
+    }
+// iconDisplay.classList.add('hidden');
+  // square.classList.add('blue-selected');
     currentGame.recordPlayerMove(buttonID);
     showPlayerTurn();
     checkStatus();

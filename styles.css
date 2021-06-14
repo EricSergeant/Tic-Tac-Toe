@@ -15,6 +15,10 @@ main {
   align-items: stretch;
 }
 
+button {
+  background-color: white;
+}
+
 aside {
   display: flex;
   flex-direction: column;
@@ -33,14 +37,14 @@ aside {
   background: linear-gradient(#FFFFFF, #FFFFFF, #0D47A1, #000000);
   /* max-width: 100%; */
 }
-.player-1-count {
-  /* max-width: 100%; */
+/* .player-1-count {
+  max-width: 100%;
   display: flex;
   flex-direction: column;
   text-shadow: 0 0 1px #0D47A1;
-  /* align-items: stretch; */
-  /* justify-content: stretch; */
-}
+  align-items: stretch;
+  justify-content: stretch;
+} */
 
 .player-2-side {
   background: linear-gradient(#FFFFFF, #FFFFFF, #C70039, #000000);
@@ -94,22 +98,24 @@ aside {
 .game-board > button {
   width: 30%;
   height: 30%;
-  background-color: white;
+  /* background-color: white; */
   border: 0px;
   cursor: pointer;
 }
 
 .blue-selected {
-  background-color: blue;
+  /* background-color: #a5b8dc; */
+  background-color: #6485c2;
 }
 
 .red-selected {
-  background-color: red;
+  /* background-color: #eba4af; */
+  background-color: #dd667c;
 }
 
-button:hover {
+/* button:hover {
   background-color: grey;
-}
+} */
 
 
 #b1,
@@ -158,15 +164,10 @@ button:hover {
 }
 
 .game-reset-button-container > button {
-  /* width: 20%;
-  height: 20%; */
-  /* background-color: #DAF7A6;
-  border: 1px solid black;
-  border-radius: 4px; */
+  background-color: #DAF7A6;
   border: none;
   border-radius: 5px;
   box-shadow: 0px 4px 8px grey;
-  /* transition: all 0.3s ease 0s; */
   cursor: pointer;
 }
 
