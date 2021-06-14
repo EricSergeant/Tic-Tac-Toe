@@ -63,11 +63,10 @@ function showWinningMessage() {
   if (currentGame.turn.id === 1) {
     displayPlayerTurnId.innerText = `Blue Mage Won!!!`;
   } else if (currentGame.turn.id === 2) {
-    displayPlayerTurnId.innerText = `Red Mage's Won!!!`;
+    displayPlayerTurnId.innerText = `Red Mage Won!!!`;
   }
   // displayPlayerTurnId.innerText = `Player ${currentGame.turn.id} Won!!!`;
   displayPlayerTurnToken.innerHTML = `<img src="${currentGame.turn.token}" alt="Player ${currentGame.turn.id} Icon">`;
-  // console.log(`Current turn is: ${currentGame.turn.id}.`);
 }
 
 function showDrawMessage() {
@@ -100,8 +99,9 @@ function selectSquareChoice() {
     } else {
       square.classList.add('red-selected');
     }
-// iconDisplay.classList.add('hidden');
-  // square.classList.add('blue-selected');
+    // adding the below to attempt to remove hover color once square selected
+    // square.classList.remove('button:hover');
+
     currentGame.recordPlayerMove(buttonID);
     showPlayerTurn();
     checkStatus();
