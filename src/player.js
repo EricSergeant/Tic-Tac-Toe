@@ -8,7 +8,7 @@ class Player {
   constructor(id, tokenAssetPath, wins, isTurn) {
     this.id = id;
     this.token = tokenAssetPath;
-    this.wins = wins;
+    this.wins = wins || 0;
     this.isTurn = isTurn;
   }
   //when to push to storage?  After each win.

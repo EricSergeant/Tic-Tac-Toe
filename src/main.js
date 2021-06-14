@@ -61,17 +61,19 @@ function startGameOnLoad() {
 
 function renderWinCountDisplay() {
   // shows the number of wins for each player
+  console.log(`pre-retrieve wins for P1: ${currentGame.player1.wins}.`);
   currentGame.player1.retrieveWinsFromStorage();
   currentGame.player2.retrieveWinsFromStorage();
-  if (currentGame.player1.wins >= 0) {
+  console.log(`post-retrieve wins for P1: ${currentGame.player1.wins}.`);
+  if (currentGame.player1.wins === null) {
+    player1WinCount.innerText = 0;
+  } else {
     player1WinCount.innerText = `${currentGame.player1.wins}`;
-  } else {
-    player1WinCount.innerText = `0`;
   }
-  if (currentGame.player2.wins >= 0) {
-    player2WinCount.innerText = `${currentGame.player2.wins}`;
+  if (currentGame.player2.wins === null) {
+    player2WinCount.innerText = 0;
   } else {
-    player2WinCount.innerText = `0`;
+    player2WinCount.innerText = `${currentGame.player2.wins}`;
   }
   console.log('clicked renderWinCountDisplay');
 }
@@ -87,8 +89,6 @@ function showWinningMessage() {
 function showDrawMessage() {
   // will show a message in case of a draw
   displayPlayerTurnId.innerText = `It's a draw, try again!`;
-  // currentGame.changePlayerTurn();
-  // displayPlayerTurnToken.innerText = `${currentGame.turn.token}`;
   console.log('clicked showDrawMessage');
 }
 
@@ -102,7 +102,6 @@ function showPlayerTurn() {
 
 function selectSquareChoice() {
   // will show icon in selected button
-  // will game.recordPlayerMove(moveClass)
   var buttonID = event.target.getAttribute('id');
   var square = event.target;
     square.disabled = true;
@@ -127,8 +126,7 @@ function checkStatus() {
     showWinningMessage();
     disableAllButtons();
   } else {
-    console.log('checkStatus() was invoked');
-    // showPlayerTurn();
+    // console.log('checkStatus() was invoked');
   }
 }
 
@@ -159,5 +157,4 @@ function resetScores() {
     this.isDraw = false;
     localStorage.clear();
     console.log('clicked resetScores buttton')
-  // need to point to new function in game.js probably ???
 }
