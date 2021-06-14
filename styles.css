@@ -2,7 +2,6 @@
   border: 2px solid green;
 }
 
-/* html */
 html,
 body,
 main {
@@ -16,29 +15,27 @@ main {
   align-items: stretch;
 }
 
-/* .player-1-side,
-.player-2-side {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-} */
-
 aside {
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* justify-content: stretch; */
+  text-align: center;
   width: 25%;
 }
 
 .player-image-container {
   margin: 0 auto;
-  height: auto%;
+  height: auto;
   max-width: 100%;
 }
 
 .player-1-side {
   background: linear-gradient(#FFFFFF, #FFFFFF, #0D47A1, #000000);
+  /* max-width: 100%; */
+}
+.player-1-count {
+  max-width: 100%;
+  /* align-items: stretch; */
 }
 
 .player-2-side {
@@ -54,31 +51,77 @@ aside {
   /* background: linear-gradient(#FFFFFF, #FFFFFF, #DAF7A6); */
   /* background: #DAF7A6; */
   /* background: radial-gradient(circle, #DAF7A6 0%, #FFFFFF 75%); */
-  background: linear-gradient(#FFFFFF 15%, #DAF7A6 60%, #FFFFFF 95%);
+  background: linear-gradient(#FFFFFF 10%, #DAF7A6 70%, #FFFFFF 90%);
 }
 
 .player-turn-display-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  text-align: center;
   width: 100%;
+}
+
+.player-icon-turn-display {
+  margin-top: 0;
 }
 
 .game-board {
   display: flex;
   justify-content: space-between;
+  align-content: space-between;
   flex-wrap: wrap;
   margin-top: 10%;
-  width: 100%;
+  margin-bottom: 5%;
+  margin-left: 1%;
+  margin-right: 1%;
   height: 50%;
+  background-color: #DAF7A6;
 }
 
 .game-board > button {
   width: 30%;
   height: 30%;
   background-color: white;
-  border: 2px solid black;
+  /* border: 2px solid black; */
 }
+
+#b1,
+#b2,
+#b3,
+#c1,
+#c2,
+#c3 {
+  border-top: 4px solid black;
+}
+
+#a1,
+#a2,
+#b1,
+#b2,
+#c1,
+#c2 {
+  border-right: 4px solid black;
+}
+
+#a1,
+#a2,
+#a3,
+#b1,
+#b2,
+#b3 {
+  border-bottom: 4px solid black;
+}
+
+#a2,
+#a3,
+#b2,
+#b3,
+#c2,
+#c3 {
+  border-left: 4px solid black;
+}
+
 
 .game-reset-button-container {
   display: flex;
@@ -88,9 +131,10 @@ aside {
   height: 20%;
 }
 
-.game-reset-button > buttton {
-  width: 20%;
-  height: 20%;
-  background-color: yellow;
-  border: 2px solid black;
+.game-reset-button-container > button {
+  /* width: 20%;
+  height: 20%; */
+  background-color: #DAF7A6;
+  border: 1px solid black;
+  border-radius: 4px;
 }
