@@ -108,14 +108,13 @@ function selectSquareChoice() {
 }
 
 function checkStatus() {
-  if(currentGame.playerTurnCounter === 9) {
-    showDrawMessage();
-    disableAllButtons();
-  } else if (currentGame.isWon) {
+  if (currentGame.isWon) {
     showWinningMessage();
     disableAllButtons();
+  } else if (currentGame.playerTurnCounter === 9) {
+    showDrawMessage();
+    disableAllButtons();
   }
-    // console.log('checkStatus() was invoked');
 }
 
 function disableAllButtons() {
