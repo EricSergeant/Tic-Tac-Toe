@@ -93,6 +93,8 @@ aside {
   background-color: #dd667c;
 }
 
+/* It is necessary to reference specific single buttons below,
+as the borders of those make the game board */
 #b1,
 #b2,
 #b3,
