@@ -1,4 +1,3 @@
-
 // 👇 query selectors here...👇
 var gameBoard = document.querySelector('.game-board');
 var player1WinCount = document.querySelector('.player-1-wins');
@@ -16,10 +15,8 @@ var c1 = document.getElementById('c1');
 var c2 = document.getElementById('c2');
 var c3 = document.getElementById('c3');
 
-
 // 👇 global variables go here...👇
 var currentGame = new Game;
-
 
 // 👇 event listeners go here 👇
 window.addEventListener('load', startGameOnLoad);
@@ -34,15 +31,13 @@ c1.addEventListener('click', selectSquareChoice);
 c2.addEventListener('click', selectSquareChoice);
 c3.addEventListener('click', selectSquareChoice);
 
-
 // 👇 functions and event handlers go here 👇
 function startGameOnLoad() {
     renderWinCountDisplay();
     showPlayerTurn();
-  }
+}
 
 function renderWinCountDisplay() {
-  // shows the number of wins for each player
   currentGame.player1.retrieveWinsFromStorage();
   currentGame.player2.retrieveWinsFromStorage();
   if (currentGame.player1.wins === null) {
@@ -55,40 +50,31 @@ function renderWinCountDisplay() {
   } else {
     player2WinCount.innerText = `${currentGame.player2.wins}`;
   }
-  // console.log('clicked renderWinCountDisplay');
 }
 
 function showWinningMessage() {
-  // will show which player won along with their icon
   if (currentGame.turn.id === 1) {
     displayPlayerTurnId.innerText = `Blue Mage Won!!!`;
   } else if (currentGame.turn.id === 2) {
     displayPlayerTurnId.innerText = `Red Mage Won!!!`;
   }
-  // displayPlayerTurnId.innerText = `Player ${currentGame.turn.id} Won!!!`;
   displayPlayerTurnToken.innerHTML = `<img src="${currentGame.turn.token}" alt="Player ${currentGame.turn.id} Icon">`;
 }
 
 function showDrawMessage() {
-  // will show a message in case of a draw
   displayPlayerTurnId.innerText = `It's a draw, try again!`;
-  // console.log('clicked showDrawMessage');
 }
 
 function showPlayerTurn() {
-  // will display the current player's turn and icon
   if (currentGame.turn.id === 1) {
     displayPlayerTurnId.innerText = `It's Blue Mage's Turn`;
   } else if (currentGame.turn.id === 2) {
     displayPlayerTurnId.innerText = `It's Red Mage's Turn`;
   }
-  // displayPlayerTurnId.innerText = `It's Player ${currentGame.turn.id}'s Turn`;
   displayPlayerTurnToken.innerHTML = `<img src="${currentGame.turn.token}" alt="Player ${currentGame.turn.id} Icon">`;
-  console.log('clicked showPlayerTurn');
 }
 
 function selectSquareChoice() {
-  // will show icon in selected button
   var buttonID = event.target.getAttribute('id');
   var square = event.target;
     square.disabled = true;
@@ -126,7 +112,6 @@ function disableAllButtons() {
 }
 
 function resetScores() {
-  // NEW FEATURE: functionality for reset scores button, puts all back to zero wins in data model
     location.reload();
     this.playerTurnCounter = 0;
     this.isWon = false;
