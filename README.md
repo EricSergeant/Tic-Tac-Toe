@@ -6,7 +6,7 @@ A deploy link will be provided once the repository is moved from private to publ
 
 The specs and comp information for this project can be [found here](https://frontend.turing.edu/projects/module-1/tic-tac-toe-solo.html).
 
-<sub>* Yes, I'm aware that's a White Mage image, not a Red Mage, but the red color works better for the purpose of this project.</sub>
+<sub>* Yes, I'm aware that's a White Mage image, not a Red Mage, but the red color works better though I didn't have a Red Mage image.</sub>
 
 ## Playing the game
 This operates like a classic game of Tic-Tac-Toe, where the winner is the one who gets three squares selected in a row.  After a win, the win tally will update and the game will restart after a three-second delay.  
@@ -22,8 +22,8 @@ Wins are saved locally and are persistent across reloads or page refreshes.  You
 ![gif of Tic-Tac-Toe page reset](https://media.giphy.com/media/eMJrsfJYvZBTzLpIqS/giphy.gif "Tic-Tac-Toe page reset")
 
 ## Overview of Project
-This is the final, solo project for Module One at Turing.  The goals of this project are as follows:
-  * Solidify and demonstrate your understanding of: DRY JavaScript, localStorage to persist data event delegation to handle similar event listeners.
+This is the final solo project for Module One at Turing.  The goals of this project are as follows:
+  * Solidify and demonstrate understanding of: DRY JavaScript, localStorage to persist data event delegation to handle similar event listeners.
   * Understand the difference between the data model and how the data is displayed on the DOM.
   * Iterate through/filter DOM elements using for loops.
   * Use your problem solving process to break down large problems, solve things step by step, and trust yourself to not rely on an outside “answer” to a logical challenge.
@@ -32,7 +32,7 @@ This is the final, solo project for Module One at Turing.  The goals of this pro
  * HTML
  * CSS
  * JavaScript
- * WAVE
+ * WAVE extension
  * Git
  * GitHub
 
@@ -52,7 +52,7 @@ While it was possible to get an added functionality of highlighting squares on m
 Finally, in order to get a clean report on WAVE, it was necessary to add text labels to the buttons serving as the square selectors.  It was decided to leave the button text labels, favoring a clean WAVE report rather than perfectly matching the comp (which itself gave wide latitude to adjust the details of the app).
 
 ## Wins
-I was able to incorporate the skills and techniques learned in Module One to complete all the required functions in the comp.
+I was able to incorporate the skills and techniques learned in Module One to complete all the required functions in the comp.  Using the WAVE tool, the page reports zero errors and zero contrast issues.
 
 I also learned several new techniques, including:
   * use of shadows on containers, buttons, and front to add depth to the layout
@@ -60,6 +60,7 @@ I also learned several new techniques, including:
   * how to use a function invocation to reload the page
   * how to create a timer within a function to delay the action performed when the function is invoked
   * how to change the cursor when mousing over specific sections of the page
+  * use of WAVE extension to test accessibility
 
 I was also able to include the following additional features above and beyond the required comp functionality:
   * a button to reset all scores to zero (i.e. clear local storage)
