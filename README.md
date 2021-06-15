@@ -4,6 +4,8 @@ How about a game or two of Tic-Tac-Toe between two old-school Final Fantasy mage
 
 A deploy link will be provided once the repository is moved from private to public.
 
+The specs and comp information for this project can be [found here](https://frontend.turing.edu/projects/module-1/tic-tac-toe-solo.html).
+
 <sub>* Yes, I'm aware that's a White Mage image, not a Red Mage, but the red color works better for the purpose of this project.</sub>
 
 ## Playing the game
@@ -35,8 +37,10 @@ The entire application consists of one HTML page, one CSS file, and three JavaSc
   3. The `main.js` file contains the DOM-related code, such as the functions to display player turn and square selections.
 
 ## Challenges
+The main challenge in this project was applying all the previous learning from Module One into this solo effort.  Flexbox produced some challenges in getting the display layout arranged properly. It also wasn't possible to get the added functionality of making player turn data persist in local storage, within the time constraint of the project.  This will be added as a future improvement (see below).
 
 ## Wins
+
 
 ## Future Improvements
 
