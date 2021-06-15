@@ -37,13 +37,31 @@ The entire application consists of one HTML page, one CSS file, and three JavaSc
   3. The `main.js` file contains the DOM-related code, such as the functions to display player turn and square selections.
 
 ## Challenges
-The main challenge in this project was applying all the previous learning from Module One into this solo effort.  Flexbox produced some challenges in getting the display layout arranged properly. It also wasn't possible to get the added functionality of making player turn data persist in local storage, within the time constraint of the project.  This will be added as a future improvement (see below).
+The main challenge in this project was applying all the previous learning from Module One into this solo effort.  Flexbox produced some challenges in getting the display layout arranged properly.
+
+It also wasn't possible to get the added functionality of making player turn data persist in local storage, within the time constraint of the project.  This will be added as a future improvement (see below).
+
+While it was possible to get an added functionality of highlighting squares on mouseover, it wasn't possible to get that mouseover event to stop once a square was selected.  Since this interfered with the colors of the selected squares, the mouseover was removed on the squares (but left on reset button).
+
+Finally, in order to get a clean report on WAVE, it was necessary to add text labels to the buttons serving as the square selectors.  It was decided to leave the button text labels, favoring a clean WAVE report rather than perfectly matching the comp (which itself gave wide latitude to adjust the details of the app).
 
 ## Wins
+I was able to incorporate the skills and techniques learned in Module One to complete all the required functions in the comp.
 
+I also learned several new techniques, including:
+  * use of shadows on containers, buttons, and front to add depth to the layout
+  * placing images on the page in response to user activity
+  * how to use a function invocation to reload the page
+  * how to create a timer within a function to delay the action performed when the function is invoked
+  * how to change the cursor when mousing over specific sections of the page
+
+I was also able to include the following additional features above and beyond the required comp functionality:
+  * a button to reset all scores to zero (i.e. clear local storage)
+  * create cursor change when mousing over selectable buttons
+  * in addition to adding the image to selected squares, add a color-change to the background to make selection more obvious for the user
+  * create a mouseover effect on the reset button to highlight it in yellow when hovering the pointer over it
 
 ## Future Improvements
-
-
-
-Screenshots/gifs of your app
+ 1. Create functionality to save turn information to local storage and make it available across reload/refresh.
+ 2. Reapply mouseover color to game squares, but have that mouseover effect only apply to non-selected squares.
+ 3. Add functionality for players to change their character's name.
