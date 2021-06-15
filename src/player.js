@@ -1,16 +1,10 @@
-// A player.js file that contains a Player class.
-// Player methods must include, but are not limited to:
-// constructor - properties should include: id (ex: 'one'), token (ex: '⭐️'), wins (ex: [])
-// saveWinsToStorage
-// retrieveWinsFromStorage
-
 class Player {
   constructor(id, tokenAssetPath, wins, isTurn) {
     this.id = id;
     this.token = tokenAssetPath;
     this.wins = wins || 0;
     this.isTurn = isTurn;
-  }
+  };
   saveWinsToStorage() {
     localStorage.setItem(`player${this.id}WinData`, JSON.stringify(this.wins));
   }
