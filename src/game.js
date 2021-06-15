@@ -18,7 +18,6 @@ class Game {
     this.isWon = false;
     this.isDraw = false;
   }
-  //UPDATE: moved to main.js --> also need function to start a game on page load
   recordPlayerMove(moveMade) {
     if (this.player1.isTurn) {
       this.player1Moves.push(moveMade);
@@ -85,7 +84,6 @@ class Game {
     this.resetGame();
   }
   resetGame() {
-    // will use to reset game board, playerTurnCounter, isWon=false
     setTimeout(function() {
       location.reload();
       this.playerTurnCounter = 0;
@@ -96,5 +94,4 @@ class Game {
   saveTurnToStorage() {
     localStorage.setItem(`playerTurnData`, JSON.stringify(this.turn));
   }
-
 }

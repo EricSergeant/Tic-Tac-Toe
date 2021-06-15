@@ -34,12 +34,12 @@ c1.addEventListener('click', selectSquareChoice);
 c2.addEventListener('click', selectSquareChoice);
 c3.addEventListener('click', selectSquareChoice);
 
+
 // 👇 functions and event handlers go here 👇
 function startGameOnLoad() {
     renderWinCountDisplay();
     showPlayerTurn();
   }
-
 
 function renderWinCountDisplay() {
   // shows the number of wins for each player
@@ -87,7 +87,6 @@ function showPlayerTurn() {
   console.log('clicked showPlayerTurn');
 }
 
-
 function selectSquareChoice() {
   // will show icon in selected button
   var buttonID = event.target.getAttribute('id');
@@ -99,23 +98,19 @@ function selectSquareChoice() {
     } else {
       square.classList.add('red-selected');
     }
-    // adding the below to attempt to remove hover color once square selected
-    // square.classList.remove('button:hover');
-
     currentGame.recordPlayerMove(buttonID);
     showPlayerTurn();
     checkStatus();
 }
 
 function checkStatus() {
-  if(currentGame.playerTurnCounter === 9) {
-    showDrawMessage();
-    disableAllButtons();
-  } else if (currentGame.isWon) {
+  if (currentGame.isWon) {
     showWinningMessage();
     disableAllButtons();
+  } else if (currentGame.playerTurnCounter === 9) {
+    showDrawMessage();
+    disableAllButtons();
   }
-    // console.log('checkStatus() was invoked');
 }
 
 function disableAllButtons() {
@@ -129,7 +124,6 @@ function disableAllButtons() {
   c2.disabled = true;
   c3.disabled = true;
 }
-
 
 function resetScores() {
   // NEW FEATURE: functionality for reset scores button, puts all back to zero wins in data model
