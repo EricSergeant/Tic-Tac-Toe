@@ -94,7 +94,8 @@ aside {
 }
 
 /* It is necessary to reference specific single buttons below,
-as the borders of those make the game board */
+as the borders of those make the game board.  Using IDs was a deviation
+from the norm, but necessary. */
 #b1,
 #b2,
 #b3,
