@@ -9,11 +9,17 @@ The specs and comp information for this project can be [found here](https://fron
 <sub>* Yes, I'm aware that's a White Mage image, not a Red Mage, but the red color works better for the purpose of this project.</sub>
 
 ## Playing the game
-This operates like a classic game of Tic-Tac-Toe, where the winner is the one who gets three squares selected in a row.  After a win, the win tally will update and the game will restart after a three-second delay.  In the case of a draw, the game will automatically restart after a three-second delay.
+This operates like a classic game of Tic-Tac-Toe, where the winner is the one who gets three squares selected in a row.  After a win, the win tally will update and the game will restart after a three-second delay.  
 
-![gif of Tic-Tac-Toe page use clicking](https://something.gif "Tic-Tac-Toe page use")
+![gif of Tic-Tac-Toe win](https://media.giphy.com/media/RQO8W5bb9zkmAHB11u/giphy.gif "Tic-Tac-Toe win")
+
+In the case of a draw, the game will automatically restart after a three-second delay.
+
+![gif of Tic-Tac-Toe draw](https://media.giphy.com/media/eS20hAVvLiD4WvfvAn/giphy.gif "Tic-Tac-Toe draw")
 
 Wins are saved locally and are persistent across reloads or page refreshes.  You can click the green button at the bottom to reset the board and erase all saved win data.
+
+![gif of Tic-Tac-Toe page reset](https://media.giphy.com/media/eMJrsfJYvZBTzLpIqS/giphy.gif "Tic-Tac-Toe page reset")
 
 ## Overview of Project
 This is the final, solo project for Module One at Turing.  The goals of this project are as follows:
@@ -64,4 +70,5 @@ I was also able to include the following additional features above and beyond th
 ## Future Improvements
  1. Create functionality to save turn information to local storage and make it available across reload/refresh.
  2. Reapply mouseover color to game squares, but have that mouseover effect only apply to non-selected squares.
- 3. Add functionality for players to change their character's name.
+ 3. Update player 2 icon to the Red Mage icon, instead of the White Mage icon currently used.
+ 4. Add functionality for players to change their character's name.
