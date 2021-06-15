@@ -1,6 +1,6 @@
 # Tic-Tac-Toe
 
-How about a game or two of Tic-Tac-Toe between two old-school Final Fantasy mages<sup>*<sup>?  Connect any three squares in a line (vertical, horizontal, diagonally) to win.  Wins are stored and will be listed when you return to the app.  
+How about a game or two of Tic-Tac-Toe between two old-school Final Fantasy mages<sup>*</sup>?  Connect any three squares in a line (vertical, horizontal, diagonally) to win.  Wins are stored and will be listed when you return to the app.  
 
 A deploy link will be provided once the repository is moved from private to public.
 
